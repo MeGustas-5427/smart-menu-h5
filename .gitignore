@@ -28,3 +28,9 @@ dist-ssr
 .gemini
 .cursor
 .claude
+
+pyproject.toml
+uv.lock
+.python-version
+.venv
+
