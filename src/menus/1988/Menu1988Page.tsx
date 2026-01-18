@@ -4,7 +4,7 @@ import './menu1988.css'
 import { coverContent, dishPages } from './data/menu1988-content'
 import { imageMap, pageSize } from './data/menu1988'
 
-const imageModules = import.meta.glob('./assets/**/*.png', {
+const imageModules = import.meta.glob('./assets/**/*.{png,jpg,jpeg,webp}', {
   eager: true,
   import: 'default',
 }) as Record<string, string>
