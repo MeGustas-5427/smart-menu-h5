@@ -23,21 +23,21 @@ export const imageMap: PageImages[] = [
     page: 2,
     images: [
       {
-        name: '爽口酱萝卜v1.jpg',
+        name: '爽口酱萝卜v1.webp',
         x: 0.083490,
         y: 0.100755,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '卤牛腱v1.jpg',
+        name: '卤牛腱v1.webp',
         x: 0.553966,
         y: 0.100755,
         w: 0.362540,
         h: 0.343316,
       },
       {
-        name: '蔬菜沙拉[横]v1.jpg',
+        name: '蔬菜沙拉[横]v1.webp',
         x: 0.095251,
         y: 0.555639,
         w: 0.809493,
@@ -49,21 +49,21 @@ export const imageMap: PageImages[] = [
     page: 3,
     images: [
       {
-        name: '烧鸡v1.jpg',
+        name: '烧鸡v1.webp',
         x: 0.083490,
         y: 0.100707,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '酱椒皮蛋v1.jpg',
+        name: '酱椒皮蛋v1.webp',
         x: 0.553966,
         y: 0.100707,
         w: 0.362540,
         h: 0.343316,
       },
       {
-        name: '特色酱鸭[横]v1.jpg',
+        name: '特色酱鸭[横]v1.webp',
         x: 0.095251,
         y: 0.555639,
         w: 0.809493,
@@ -75,7 +75,7 @@ export const imageMap: PageImages[] = [
     page: 4,
     images: [
       {
-        name: '土烧南湾大鱼头大油条v1.jpg',
+        name: '土烧南湾大鱼头大油条v1.webp',
         x: 0.095254,
         y: 0.117257,
         w: 0.809488,
@@ -87,14 +87,14 @@ export const imageMap: PageImages[] = [
     page: 5,
     images: [
       {
-        name: '老虎斑[横]v1.jpg',
+        name: '老虎斑[横]v1.webp',
         x: 0.095251,
         y: 0.109453,
         w: 0.809493,
         h: 0.321960,
       },
       {
-        name: '红焖黄盖大甲鱼[横]v1.jpg',
+        name: '红焖黄盖大甲鱼[横]v1.webp',
         x: 0.095251,
         y: 0.545787,
         w: 0.809493,
@@ -106,21 +106,21 @@ export const imageMap: PageImages[] = [
     page: 6,
     images: [
       {
-        name: '京葱海参烩蹄筋v1.jpg',
+        name: '京葱海参烩蹄筋v1.webp',
         x: 0.083490,
         y: 0.100813,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '罗氏虾v1.jpg',
+        name: '罗氏虾v1.webp',
         x: 0.553966,
         y: 0.100813,
         w: 0.362540,
         h: 0.343316,
       },
       {
-        name: '农家腊肉炖腊排[横]v1.jpg',
+        name: '农家腊肉炖腊排[横]v1.webp',
         x: 0.095251,
         y: 0.555673,
         w: 0.809493,
@@ -132,21 +132,21 @@ export const imageMap: PageImages[] = [
     page: 7,
     images: [
       {
-        name: '荷叶饼扣肉v1.jpg',
+        name: '荷叶饼扣肉v1.webp',
         x: 0.083490,
         y: 0.100811,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '腌辣椒炒腊味v1.jpg',
+        name: '腌辣椒炒腊味v1.webp',
         x: 0.553966,
         y: 0.100811,
         w: 0.362540,
         h: 0.343316,
       },
       {
-        name: '文火炖黄牛肉[横]v1.jpg',
+        name: '文火炖黄牛肉[横]v1.webp',
         x: 0.095251,
         y: 0.555673,
         w: 0.809493,
@@ -158,21 +158,21 @@ export const imageMap: PageImages[] = [
     page: 8,
     images: [
       {
-        name: '石锅香芋v1.jpg',
+        name: '石锅香芋v1.webp',
         x: 0.083490,
         y: 0.100750,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '清汤羊肉v1.jpg',
+        name: '清汤羊肉v1.webp',
         x: 0.553966,
         y: 0.100750,
         w: 0.362540,
         h: 0.343316,
       },
       {
-        name: '鲜肚炖猪蹄[横]v1.jpg',
+        name: '鲜肚炖猪蹄[横]v1.webp',
         x: 0.095251,
         y: 0.555639,
         w: 0.809493,
@@ -184,28 +184,28 @@ export const imageMap: PageImages[] = [
     page: 9,
     images: [
       {
-        name: '荠菜百叶卷v1.jpg',
+        name: '荠菜百叶卷v1.webp',
         x: 0.083490,
         y: 0.100234,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '干锅花菜v1.jpg',
+        name: '干锅花菜v1.webp',
         x: 0.553966,
         y: 0.100234,
         w: 0.362540,
         h: 0.343316,
       },
       {
-        name: '干锅鹿茸菌v1.jpg',
+        name: '干锅鹿茸菌v1.webp',
         x: 0.083490,
         y: 0.519994,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '炒时蔬v1.jpg',
+        name: '炒时蔬v1.webp',
         x: 0.553966,
         y: 0.519994,
         w: 0.362540,
@@ -217,14 +217,14 @@ export const imageMap: PageImages[] = [
     page: 10,
     images: [
       {
-        name: '手工水饺v1.jpg',
+        name: '手工水饺v1.webp',
         x: 0.083490,
         y: 0.172696,
         w: 0.362539,
         h: 0.343316,
       },
       {
-        name: '地锅馍v1.jpg',
+        name: '地锅馍v1.webp',
         x: 0.553966,
         y: 0.172696,
         w: 0.362540,
