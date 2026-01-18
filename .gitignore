@@ -25,3 +25,6 @@ dist-ssr
 .agent
 .codex
 .shared
+.gemini
+.cursor
+.claude
