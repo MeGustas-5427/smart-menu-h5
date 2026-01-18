@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap');
+
+.menu-list {
+  --ink: #f6efe6;
+  --muted: rgba(246, 239, 230, 0.7);
+  --gold: #d5a84a;
+  --gold-soft: rgba(213, 168, 74, 0.2);
+  --lacquer: #2b0b0f;
+  --lacquer-deep: #1b070a;
+  min-height: 100dvh;
+  padding: 56px 20px 48px;
+  background: radial-gradient(
+      circle at top,
+      rgba(213, 168, 74, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05), transparent 50%),
+    linear-gradient(180deg, #3a0f17 0%, var(--lacquer-deep) 100%);
+  color: var(--ink);
+  font-family: 'Playfair Display SC', 'STKaiti', 'KaiTi', 'Songti SC', serif;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-list::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 60%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0 1px,
+      transparent 1px 6px
+    );
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.menu-list__hero {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.menu-list__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-family: 'Karla', 'Microsoft YaHei', sans-serif;
+}
+
+.menu-list__title {
+  margin: 18px 0 10px;
+  font-size: clamp(28px, 7vw, 38px);
+  letter-spacing: 4px;
+}
+
+.menu-list__subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  font-family: 'Karla', 'Microsoft YaHei', sans-serif;
+}
+
+.menu-list__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.menu-card {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(213, 168, 74, 0.45);
+  padding: 22px 20px;
+  background: rgba(19, 7, 9, 0.6);
+  display: flex;
+  align-items: center;
+  min-height: 140px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  animation: riseIn 0.6s ease forwards;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+}
+
+.menu-card__frame {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(213, 168, 74, 0.2);
+  pointer-events: none;
+}
+
+.menu-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Karla', 'Microsoft YaHei', sans-serif;
+}
+
+.menu-card__slug {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.menu-card__title {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display SC', 'STKaiti', 'KaiTi', serif;
+}
+
+.menu-card__desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.menu-card__cta {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.menu-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.menu-list__footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: rgba(246, 239, 230, 0.5);
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-family: 'Karla', 'Microsoft YaHei', sans-serif;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-list__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .menu-card {
+    min-height: 180px;
+  }
+}

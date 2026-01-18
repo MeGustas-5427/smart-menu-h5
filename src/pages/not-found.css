@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap');
+
+.not-found {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+      circle at top,
+      rgba(213, 168, 74, 0.2),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #24090f, #0f0608);
+  color: #f6efe6;
+  padding: 24px;
+  text-align: center;
+  font-family: 'Karla', 'Microsoft YaHei', sans-serif;
+}
+
+.not-found__frame {
+  border: 1px solid rgba(213, 168, 74, 0.45);
+  padding: 32px 26px;
+  max-width: 360px;
+  width: 100%;
+  background: rgba(15, 6, 8, 0.6);
+}
+
+.not-found__eyebrow {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #d5a84a;
+}
+
+.not-found__title {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-family: 'Playfair Display SC', 'STKaiti', 'KaiTi', serif;
+  letter-spacing: 2px;
+}
+
+.not-found__desc {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: rgba(246, 239, 230, 0.7);
+}
+
+.not-found__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid #d5a84a;
+  color: #d5a84a;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 12px;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.not-found__link:hover {
+  background: #d5a84a;
+  color: #1b070a;
+}

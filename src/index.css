@@ -1,15 +1,7 @@
 :root {
-  --palace-red: #800020;
-  --imperial-yellow: #fff0c8;
-  --rich-gold: #daa520;
-  --border-gold: #b8860b;
-  --page-width: 595px;
-  --page-height: 842px;
-  --page-scale: 1;
-  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC',
-    'Source Han Sans SC', sans-serif;
-  color: var(--rich-gold);
-  background-color: var(--palace-red);
+  font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  color: #1d1b19;
+  background-color: #0c0a09;
 }
 
 *,
@@ -21,7 +13,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: var(--palace-red);
+  background: #0c0a09;
   color: inherit;
   overflow-x: hidden;
 }
