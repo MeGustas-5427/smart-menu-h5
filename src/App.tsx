@@ -34,6 +34,14 @@ const getPageImages = (pageNumber: number) => {
 const usePageScale = () => {
   useLayoutEffect(() => {
     const updateScale = () => {
+      document.documentElement.style.setProperty(
+        '--page-width',
+        `${pageSize.width}px`,
+      )
+      document.documentElement.style.setProperty(
+        '--page-height',
+        `${pageSize.height}px`,
+      )
       const scale = Math.min(
         document.documentElement.clientWidth / pageSize.width,
         1,

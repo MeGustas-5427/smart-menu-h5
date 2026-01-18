@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   background: var(--palace-red);
   color: inherit;
+  overflow-x: hidden;
 }
 
 #root {
