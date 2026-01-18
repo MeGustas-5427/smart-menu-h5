@@ -1,20 +1,35 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import './menu1988.css'
 import { coverContent, dishPages } from './data/menu1988-content'
 import { imageMap, pageSize } from './data/menu1988'
 
-const imageModules = import.meta.glob('./assets/**/*.{png,jpg,jpeg,webp}', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>
+const IMG_BASE = import.meta.env.VITE_IMG_BASE ?? 'https://start-menu-h5.oss-cn-wuhan-lr.aliyuncs.com'
+const MENU_IMAGE_BASE = IMG_BASE
+  ? `${IMG_BASE.replace(/\/$/, '')}/menu-1988`
+  : ''
 
-const imageSrcByName = Object.fromEntries(
-  Object.entries(imageModules).map(([path, src]) => [
-    path.split('/').pop() ?? path,
-    src,
-  ]),
-)
+const toWebpName = (name: string) =>
+  name.replace(/\.(png|jpe?g)$/i, '.webp')
+
+const buildImageSources = (name: string) => {
+  if (!MENU_IMAGE_BASE) {
+    return { src: '', fallbackSrc: '' }
+  }
+
+  const webpName = toWebpName(name)
+  if (webpName !== name) {
+    return {
+      src: `${MENU_IMAGE_BASE}/${encodeURIComponent(webpName)}`,
+      fallbackSrc: `${MENU_IMAGE_BASE}/${encodeURIComponent(name)}`,
+    }
+  }
+
+  return {
+    src: `${MENU_IMAGE_BASE}/${encodeURIComponent(name)}`,
+    fallbackSrc: '',
+  }
+}
 
 const getPageImages = (pageNumber: number) => {
   const page = imageMap.find((item) => item.page === pageNumber)
@@ -25,7 +40,7 @@ const getPageImages = (pageNumber: number) => {
   return [...page.images]
     .map((image) => ({
       ...image,
-      src: imageSrcByName[image.name] ?? '',
+      ...buildImageSources(image.name),
       ratio: image.w / image.h,
     }))
     .sort((a, b) => (a.y === b.y ? a.x - b.x : a.y - b.y))
@@ -58,12 +73,24 @@ const usePageScale = (root: React.RefObject<HTMLDivElement | null>) => {
 type DishCardProps = {
   name: string
   desc: string
-  image?: { src: string; ratio: number }
+  image?: { src: string; fallbackSrc: string; ratio: number }
 }
 
 const DishCard = ({ name, desc, image }: DishCardProps) => {
   const isWide = (image?.ratio ?? 0) > 1.3
-  const hasImage = Boolean(image?.src)
+  const [currentSrc, setCurrentSrc] = useState(image?.src ?? '')
+  const [isMissing, setIsMissing] = useState(!image?.src)
+  const fallbackSrc = image?.fallbackSrc ?? ''
+  const hasImage = Boolean(currentSrc) && !isMissing
+
+  const handleImageError = () => {
+    if (fallbackSrc && currentSrc !== fallbackSrc) {
+      setCurrentSrc(fallbackSrc)
+      return
+    }
+
+    setIsMissing(true)
+  }
 
   return (
     <div className={`dish-card ${isWide ? 'dish-card--wide' : ''}`}>
@@ -71,7 +98,15 @@ const DishCard = ({ name, desc, image }: DishCardProps) => {
         className={`dish-image ${hasImage ? '' : 'dish-image--empty'}`}
         aria-hidden={!hasImage}
       >
-        {hasImage ? <img src={image?.src} alt={name} /> : null}
+        {hasImage ? (
+          <img
+            src={currentSrc}
+            alt={name}
+            loading="lazy"
+            decoding="async"
+            onError={handleImageError}
+          />
+        ) : null}
       </div>
       <div className="dish-name">{name}</div>
       <div className="dish-desc">{desc}</div>
