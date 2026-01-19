@@ -117,30 +117,72 @@ const DishCard = ({ name, desc, image }: DishCardProps) => {
 const PageFrame = () => (
   <div className="page-frame" aria-hidden="true">
     <div className="watermark">和 筵</div>
-    <div className="corner corner--tl">
-      <span className="corner-inner" />
-      <span className="corner-line corner-line--h" />
-      <span className="corner-line corner-line--v" />
-      <span className="corner-diamond" />
-    </div>
-    <div className="corner corner--tr">
-      <span className="corner-inner" />
-      <span className="corner-line corner-line--h" />
-      <span className="corner-line corner-line--v" />
-      <span className="corner-diamond" />
-    </div>
-    <div className="corner corner--br">
-      <span className="corner-inner" />
-      <span className="corner-line corner-line--h" />
-      <span className="corner-line corner-line--v" />
-      <span className="corner-diamond" />
-    </div>
-    <div className="corner corner--bl">
-      <span className="corner-inner" />
-      <span className="corner-line corner-line--h" />
-      <span className="corner-line corner-line--v" />
-      <span className="corner-diamond" />
-    </div>
+    {[0, 90, 180, 270].map((rotation, index) => {
+      const positions = [
+        'corner--tl',
+        'corner--tr',
+        'corner--br',
+        'corner--bl',
+      ]
+      return (
+        <div
+          key={rotation}
+          className={`corner ${positions[index]}`}
+          style={{ transform: `rotate(${rotation}deg)` }}
+        >
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Outer Box */}
+            <rect
+              x="2"
+              y="2"
+              width="96"
+              height="96"
+              stroke="var(--border-gold)"
+              strokeWidth="4"
+            />
+            {/* Inner Box */}
+            <rect
+              x="16"
+              y="16"
+              width="68"
+              height="68"
+              stroke="var(--border-gold)"
+              strokeWidth="3"
+            />
+            {/* Corner Details (Triangular/Bevel connections) */}
+            <path
+              d="M16 16 L40 40 L40 16"
+              stroke="var(--border-gold)"
+              strokeWidth="2"
+            />
+            <path
+              d="M84 16 L60 40 L60 16"
+              stroke="var(--border-gold)"
+              strokeWidth="2"
+            />
+            <path
+              d="M84 84 L60 60 L60 84"
+              stroke="var(--border-gold)"
+              strokeWidth="2"
+            />
+            <path
+              d="M16 84 L40 60 L40 84"
+              stroke="var(--border-gold)"
+              strokeWidth="2"
+            />
+            {/* Center Diamond */}
+            <rect
+              x="45"
+              y="45"
+              width="10"
+              height="10"
+              transform="rotate(45 50 50)"
+              fill="var(--border-gold)"
+            />
+          </svg>
+        </div>
+      )
+    })}
   </div>
 )
 

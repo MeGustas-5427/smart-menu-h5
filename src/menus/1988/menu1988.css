@@ -87,68 +87,39 @@
   position: absolute;
   width: 68px;
   height: 68px;
-  border: 2px solid var(--border-gold);
+  /* border: 2px solid var(--border-gold); Remove border as SVG handles it */
   box-sizing: border-box;
   transform-origin: center;
 }
 
-.menu1988 .corner-inner {
-  position: absolute;
-  inset: 10px;
-  border: 1.5px solid var(--border-gold);
+.menu1988 .corner svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.menu1988 .corner-line {
-  position: absolute;
-  background: var(--border-gold);
-}
 
-.menu1988 .corner-line--h {
-  width: 16px;
-  height: 2px;
-  left: 10px;
-  top: 10px;
-}
-
-.menu1988 .corner-line--v {
-  width: 2px;
-  height: 16px;
-  left: 10px;
-  top: 10px;
-}
-
-.menu1988 .corner-diamond {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid var(--border-gold);
-  transform: rotate(45deg);
-  left: 50%;
-  top: 50%;
-  margin-left: -5px;
-  margin-top: -5px;
-}
 
 .menu1988 .corner--tl {
-  top: 18px;
-  left: 18px;
+  top: 20px;
+  left: 20px;
 }
 
 .menu1988 .corner--tr {
-  top: 18px;
-  right: 18px;
+  top: 20px;
+  right: 20px;
   transform: rotate(90deg);
 }
 
 .menu1988 .corner--br {
-  bottom: 18px;
-  right: 18px;
+  bottom: 20px;
+  right: 20px;
   transform: rotate(180deg);
 }
 
 .menu1988 .corner--bl {
-  bottom: 18px;
-  left: 18px;
+  bottom: 20px;
+  left: 20px;
   transform: rotate(270deg);
 }
 
@@ -157,7 +128,7 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  padding: 88px 70px 64px;
+  padding: 35px 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -201,6 +172,7 @@
   font-size: 14px;
   letter-spacing: 2px;
   font-weight: 600;
+  border-radius: 4px;
 }
 
 .menu1988 .cover-title {
@@ -223,7 +195,7 @@
 
 .menu1988 .cover-menu-box {
   width: 78%;
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(50, 0, 15, 0.6);
   padding: 20px 18px;
   display: flex;
   flex-direction: column;
@@ -268,13 +240,13 @@
 .menu1988 .page-title {
   font-size: 19px;
   letter-spacing: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .menu1988 .dish-grid {
   width: 100%;
   display: grid;
-  gap: 26px 20px;
+  gap: 8px 18px;
   flex: 1;
   align-content: start;
 }
@@ -310,7 +282,7 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   border: 2px solid var(--border-gold);
-  background: rgba(79, 0, 22, 0.5);
+  background: radial-gradient(circle, #931f3c 0%, #800020 100%);
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -333,14 +305,14 @@
 }
 
 .menu1988 .dish-name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .menu1988 .dish-desc {
-  font-size: 10.5px;
-  line-height: 1.5;
+  font-size: 9.5px;
+  line-height: 1.4;
   color: var(--imperial-yellow);
   max-width: 92%;
 }
