@@ -74,13 +74,19 @@
 .menu1988 .watermark {
   position: absolute;
   inset: 0;
+  /* ⬆ 定位区域 (可改成 top/left/right/bottom 单独控制) */
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 220px;
+  /* ⬆ 垂直对齐 (center=居中, flex-start=靠上, flex-end=靠下) */
+  left: 47px;
+  /* ⬆ 水平对齐 (center=居中, flex-start=靠左, flex-end=靠右) */
+  font-size: 200px;
+  /* ⬆ 字体大小 */
   font-weight: 700;
-  letter-spacing: 24px;
+  letter-spacing: 20px;
+  /* ⬆ 字间距 */
   color: rgba(255, 240, 200, 0.1);
+  /* ⬆ 颜色和透明度 */
 }
 
 .menu1988 .corner {
@@ -292,16 +298,31 @@
   width: 100%;
   aspect-ratio: 3 / 4;
   border: 2px solid var(--border-gold);
+  /* ⬆ 边框粗细 (原值2px，按源码改为1.5px) */
+  border-radius: 8px;
+  /* ⬆ 圆角大小 (源码 arc=1mm ≈ 3px) */
   background: radial-gradient(circle, #931f3c 0%, #800020 100%);
-  padding: 10px;
+  /* ⬆ 背景渐变 */
+  padding: 5px;
+  /* ⬆ 图片与边框的间距 */
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* 横图样式 */
 .menu1988 .dish-card--wide .dish-image {
+  width: 100%;
+  /* ⬆ 横图宽度 (100%=撑满容器, 可改成如 90% 或 450px) */
   aspect-ratio: 16 / 9;
+  /* ⬆ 横图宽高比 */
+  border: 2px solid var(--border-gold);
+  /* ⬆ 横图边框粗细 */
+  border-radius: 8px;
+  /* ⬆ 横图圆角大小 */
+  padding: 5px;
+  /* ⬆ 横图内边距 */
 }
 
 .menu1988 .dish-image img {
@@ -321,7 +342,7 @@
 }
 
 .menu1988 .dish-desc {
-  font-size: 9.5px;
+  font-size: 9.9px;
   line-height: 1.4;
   color: var(--imperial-yellow);
   max-width: 92%;
@@ -329,7 +350,9 @@
 
 .menu1988 .page-footer {
   margin-top: auto;
-  font-size: 11px;
+  margin-bottom: 20px;
+  /* ⬆ 距离底部的距离，数值越大位置越高 */
+  font-size: 15px;
   color: rgba(255, 240, 200, 0.7);
   letter-spacing: 2px;
 }
