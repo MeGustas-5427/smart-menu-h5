@@ -117,7 +117,7 @@ const DishCard = ({ name, desc, image }: DishCardProps) => {
 const PageFrame = () => (
   <div className="page-frame" aria-hidden="true">
     <div className="watermark">和 筵</div>
-    {[0, 90, 180, 270].map((rotation, index) => {
+    {[0, 1, 2, 3].map((index) => {
       const positions = [
         'corner--tl',
         'corner--tr',
@@ -126,9 +126,8 @@ const PageFrame = () => (
       ]
       return (
         <div
-          key={rotation}
+          key={index}
           className={`corner ${positions[index]}`}
-          style={{ transform: `rotate(${rotation}deg)` }}
         >
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Outer Box */}
