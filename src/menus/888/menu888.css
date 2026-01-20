@@ -1,0 +1,372 @@
+.menu888 {
+  --palace-red: #800020;
+  --imperial-yellow: #fff0c8;
+  --rich-gold: #daa520;
+  --border-gold: #b8860b;
+  --page-width: 595px;
+  --page-height: 842px;
+  --page-scale: 1;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans CJK SC',
+    'Source Han Sans SC', sans-serif;
+  color: var(--rich-gold);
+  background: var(--palace-red);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.menu888 .menu-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+  padding: 16px 0 48px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.menu888 .page-shell {
+  position: relative;
+  width: calc(var(--page-width) * var(--page-scale));
+  height: calc(var(--page-height) * var(--page-scale));
+}
+
+.menu888 .page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--page-width);
+  height: var(--page-height);
+  background: var(--palace-red);
+  color: var(--rich-gold);
+  transform: scale(var(--page-scale));
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.menu888 .page::before,
+.menu888 .page::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  border-color: var(--border-gold);
+  left: 22px;
+  right: 22px;
+  top: 22px;
+  bottom: 22px;
+}
+
+.menu888 .page::before {
+  border: 3px solid var(--border-gold);
+}
+
+.menu888 .page::after {
+  inset: 28px;
+  border: 1px solid var(--border-gold);
+}
+
+.menu888 .page-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.menu888 .watermark {
+  position: absolute;
+  inset: 0;
+  /* ⬆ 定位区域 (可改成 top/left/right/bottom 单独控制) */
+  display: flex;
+  align-items: center;
+  /* ⬆ 垂直对齐 (center=居中, flex-start=靠上, flex-end=靠下) */
+  left: 47px;
+  /* ⬆ 水平对齐 (center=居中, flex-start=靠左, flex-end=靠右) */
+  font-size: 200px;
+  /* ⬆ 字体大小 */
+  font-weight: 700;
+  letter-spacing: 20px;
+  /* ⬆ 字间距 */
+  color: rgba(255, 240, 200, 0.1);
+  /* ⬆ 颜色和透明度 */
+}
+
+.menu888 .corner {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  /* border: 2px solid var(--border-gold); Remove border as SVG handles it */
+  box-sizing: border-box;
+  transform-origin: center;
+}
+
+.menu888 .corner svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 左上角 */
+.menu888 .corner--tl {
+  top: -22px;
+  /* ← 调整这个值，越小越靠近页面顶部边缘 */
+  left: 43px;
+  /* ← 调整这个值，越小越靠近页面左侧边缘 */
+}
+
+/* 右上角 */
+.menu888 .corner--tr {
+  top: 43px;
+  /* ← 调整这个值 */
+  right: -22px;
+  /* ← 调整这个值 */
+  transform: rotate(-90deg);
+}
+
+/* 右下角 */
+.menu888 .corner--br {
+  bottom: -22px;
+  /* ← 调整这个值 */
+  right: 43px;
+  /* ← 调整这个值 */
+  transform: rotate(180deg);
+}
+
+/* 左下角 */
+.menu888 .corner--bl {
+  bottom: 43px;
+  /* ← 调整这个值 */
+  left: -22px;
+  /* ← 调整这个值 */
+  transform: rotate(90deg);
+}
+
+.menu888 .page-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 35px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.menu888 .page--cover .page-content {
+  padding: 120px 72px 60px;
+  justify-content: space-between;
+}
+
+.menu888 .page--dish .page-content {
+  gap: 18px;
+}
+
+.menu888 .cover-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.menu888 .cover-title-box {
+  position: relative;
+  width: 86%;
+  border: 2px solid var(--border-gold);
+  background: rgba(79, 0, 22, 0.8);
+  padding: 32px 24px 24px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.menu888 .cover-brand {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  border: 1px solid var(--border-gold);
+  background: var(--palace-red);
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.menu888 .cover-title {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 8px;
+}
+
+.menu888 .cover-subtitle {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--imperial-yellow);
+  letter-spacing: 3px;
+}
+
+.menu888 .cover-menu-label {
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+.menu888 .cover-menu-box {
+  width: 78%;
+  background: rgba(50, 0, 15, 0.6);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu888 .cover-section-title {
+  color: var(--imperial-yellow);
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+
+.menu888 .cover-section-line {
+  color: #f8f5ef;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.menu888 .cover-price {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--imperial-yellow);
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 1px;
+}
+
+.menu888 .cover-price-note {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.menu888 .cover-footer {
+  font-size: 12px;
+  color: rgba(255, 240, 200, 0.7);
+  letter-spacing: 2px;
+}
+
+.menu888 .page-title {
+  font-size: 19px;
+  letter-spacing: 5px;
+  margin-bottom: 5px;
+}
+
+.menu888 .dish-grid {
+  width: 100%;
+  display: grid;
+  gap: 8px 18px;
+  flex: 1;
+  align-content: start;
+}
+
+.menu888 .dish-grid--grid-3,
+.menu888 .dish-grid--grid-4,
+.menu888 .dish-grid--grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.menu888 .dish-grid--grid-3 .dish-card:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.menu888 .dish-grid--wide-2,
+.menu888 .dish-grid--single {
+  grid-template-columns: 1fr;
+}
+
+.menu888 .dish-grid--single .dish-card {
+  max-width: 82%;
+  margin: 0 auto;
+}
+
+.menu888 .dish-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu888 .dish-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 2px solid var(--border-gold);
+  /* ⬆ 边框粗细 (原值2px，按源码改为1.5px) */
+  border-radius: 8px;
+  /* ⬆ 圆角大小 (源码 arc=1mm ≈ 3px) */
+  background: radial-gradient(circle, #931f3c 0%, #800020 100%);
+  /* ⬆ 背景渐变 */
+  padding: 5px;
+  /* ⬆ 图片与边框的间距 */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 横图样式 */
+.menu888 .dish-card--wide .dish-image {
+  width: 100%;
+  /* ⬆ 横图宽度 (100%=撑满容器, 可改成如 90% 或 450px) */
+  aspect-ratio: 16 / 9;
+  /* ⬆ 横图宽高比 */
+  border: 2px solid var(--border-gold);
+  /* ⬆ 横图边框粗细 */
+  border-radius: 8px;
+  /* ⬆ 横图圆角大小 */
+  padding: 5px;
+  /* ⬆ 横图内边距 */
+}
+
+.menu888 .dish-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu888 .dish-image--empty {
+  background: rgba(79, 0, 22, 0.35);
+}
+
+.menu888 .dish-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.menu888 .dish-desc {
+  font-size: 9.9px;
+  line-height: 1.4;
+  color: var(--imperial-yellow);
+  max-width: 92%;
+}
+
+.menu888 .page-footer {
+  margin-top: auto;
+  margin-bottom: 20px;
+  /* ⬆ 距离底部的距离，数值越大位置越高 */
+  font-size: 15px;
+  color: rgba(255, 240, 200, 0.7);
+  letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+  .menu888 .cover-title {
+    font-size: 36px;
+  }
+
+  .menu888 .cover-menu-box {
+    width: 84%;
+  }
+
+  .menu888 .dish-desc {
+    font-size: 9.5px;
+  }
+}
