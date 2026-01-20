@@ -27,3 +27,19 @@ depending on shared layout structure.
 - **WHEN** two menus use different component structures
 - **THEN** each menu renders its own layout without conflicts
 
+### Requirement: Register 1388 menu
+The system SHALL register a menu entry with slug `1388` and a display name
+sourced from 1388.pdf.
+
+#### Scenario: Navigate to the 1388 menu
+- **WHEN** a user navigates to `/menu/1388`
+- **THEN** the 1388 menu page is rendered with its registered display name
+
+### Requirement: Register 888 menu
+The system SHALL register a menu entry with slug `888` and a display name
+sourced from 888.pdf.
+
+#### Scenario: Navigate to the 888 menu
+- **WHEN** a user navigates to `/menu/888`
+- **THEN** the 888 menu page is rendered with its registered display name
+
